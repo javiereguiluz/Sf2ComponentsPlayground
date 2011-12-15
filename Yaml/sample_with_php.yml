@@ -1,0 +1,8 @@
+description: "Social and Mobile Team"
+generated: <?php echo date('Y')."\n"; ?>
+users:
+<?php for($i=0; $i<10; $i++): ?>
+  -
+    name:    Name_<?php echo $i."\n"; ?>
+    surname: Surname_<?php echo $i."\n"; ?>
+<?php endfor; ?>
