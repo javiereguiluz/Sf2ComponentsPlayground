@@ -1,0 +1,7 @@
+Person:
+  properties:
+    name:
+      - NotBlank : ~
+    age:
+      - Min: { limit: 18 }
+      - Max: 99
