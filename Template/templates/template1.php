@@ -1,0 +1,2 @@
+Hola <?php echo $name; ?>
+

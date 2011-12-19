@@ -1,0 +1,11 @@
+description: "Social and Mobile Team"
+users:
+  javi:
+    name:    "Javi"
+    surname: "Lopez"
+  rob:
+    name:    "Rob"
+    surname: "Waring"
+  nitin:
+    name:    "Nitin"
+    surname: "Patel"
