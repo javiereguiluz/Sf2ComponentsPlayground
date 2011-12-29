@@ -1,0 +1,5 @@
+users:
+  javi:
+    password: 'p0ssw3rd'
+    enabled:  true
+    roles:    [ROLE_DEV]

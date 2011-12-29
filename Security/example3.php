@@ -9,36 +9,37 @@
  * concepts: authentication, authorization, providers, users, encoders and roles.
  * http://symfony.com/doc/current/book/security.html
  * 
- * In this first example we just focus on users and providers. We are going to
- * create some in memory users that will be usefull in the next examples.
+ * Sometimes we need multiple providers, that is, different sources for our users.
+ * The ChainUserProvider is what we should use then.
  * 
  * Inspired by http://fabien.potencier.org/article/49/what-is-symfony2
  * 
  * @author: Javier Lopez <f12loalf@gmail.com>
  */
+
 require_once __DIR__."/../autoload.php";
+require_once __DIR__."/YamlUserProvider.php";
 
 use Symfony\Component\Security\Core\User\InMemoryUserProvider;
-use Symfony\Component\Security\Core\User\User as User;
+use Symfony\Component\Security\Core\User\ChainUserProvider;
 
 // List of in memory users
 $users     = array(
-  'javi' => array( 
-    'password' => 'my_pass', 
-    'roles' => array('ROLE_DEV')
+  'fabien' => array( 
+    'password' => 'his_pass', 
+    'roles' => array('ROLE_LEAD')
   ),
-	'fabien' => array(
-	  'password' => 'his_pass',
-		'roles'    => array('ROLE_LEAD')
-	)
 );
 
-$memory_users = new InMemoryUserProvider($users);
+$providers[] = new InMemoryUserProvider($users);
+$providers[] = new YamlUserProvider("users.yml");
 
-// We can create new users in runtime
-$user = new User('foo', 'bar', array('ROLE_FOO'));
-$memory_users->createUser($user);
+$all_users = new ChainUserProvider($providers);
 
-$me = $memory_users->loadUserByUsername('fabien'); // User Object
+$me = $all_users->loadUserByUsername('fabien');
+print $me->getUsername()."\n";
+print $me->getPassword()."\n";
+
+$me = $all_users->loadUserByUsername('javi');
 print $me->getUsername()."\n";
 print $me->getPassword()."\n";
