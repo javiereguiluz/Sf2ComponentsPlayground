@@ -1,5 +1,19 @@
 <?php
 
+/*
+ * Components Playground: Validator (Example 3)
+ * 
+ * Description:
+ * This time we are validating a Person object. Notice that we are telling the
+ * validator service to use the StaticMethodLoader to look for object constraints,
+ * wich means that the validator service will try to execute Class::loadValidatorMetadata
+ * to get this information.
+ * 
+ * Inspired by http://fabien.potencier.org/article/49/what-is-symfony2
+ * 
+ * @author: Javier Lopez <f12loalf@gmail.com>
+ */
+
 require_once __DIR__."/../autoload.php";
 
 use Symfony\Component\Validator\Validator; 

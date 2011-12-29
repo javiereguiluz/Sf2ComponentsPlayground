@@ -1,0 +1,5 @@
+users:
+  javi:
+    password: 'my_pass'
+    enabled:  true
+    roles:    [ROLE_DEV]

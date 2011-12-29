@@ -1,5 +1,20 @@
 <?php
 
+/*
+ * Components Playground: Validator (Example 4)
+ * 
+ * Description:
+ * So you like keep things clean and don't want to add a new method to all your
+ * model classes. I think like you, and the symfony team, so there is a way to
+ * write all this information in a separte file, and yes, it's a yaml file, ;).
+ * 
+ * Just make sure you tell the validator service where is you validation file.
+ * 
+ * Inspired by http://fabien.potencier.org/article/49/what-is-symfony2
+ * 
+ * @author: Javier Lopez <f12loalf@gmail.com>
+ */
+
 require_once __DIR__."/../autoload.php";
 
 use Symfony\Component\Validator\Validator; 

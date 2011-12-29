@@ -1,5 +1,16 @@
 <?php
 
+/*
+ * Components Playground: Process (Example 2)
+ * 
+ * Description:
+ * In this example we calculate the average response time of twitter.com
+ * 
+ * Inspired by http://fabien.potencier.org/article/49/what-is-symfony2
+ * 
+ * @author: Javier Lopez <f12loalf@gmail.com>
+ */
+
 require_once __DIR__."/../autoload.php";
 
 use Symfony\Component\Process\Process;
